@@ -10,6 +10,23 @@ namespace _1dv402.s1.l03A
     {
         static void Main(string[] args)
         {
+
+
+
         }
+
+
+        static string ReadInt(string prompt) 
+        {
+            return "Hej hopp";
+        
+        }
+
+        string int ProcessSalaries()
+        {
+            return 9;
+        }
+        
+        
     }
 }
