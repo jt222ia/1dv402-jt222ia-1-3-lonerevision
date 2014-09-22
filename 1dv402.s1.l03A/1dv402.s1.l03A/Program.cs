@@ -10,10 +10,26 @@ namespace _1dv402.s1.l03A
     {
         static void Main(string[] args)
         {
+            int salariesInput = 0;
+            salariesInput = ReadInt("Ange hur många löner som ska beräknas: ");
 
-            Salaries = ReadInt("Ange hur många löner som ska beräknas: ");
-            ProcessSalaries(); 
+            while(salariesInput >= 2)
+                try
+                {
 
+                    ProcessSalaries(salariesInput);
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Du måste mata in minst 2 löner för att göra en beräkning!");
+                }
+
+                    
+
+                
+
+            Console.ReadKey();
 
        }
 
