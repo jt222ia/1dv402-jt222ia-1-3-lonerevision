@@ -10,25 +10,19 @@ namespace _1dv402.s1.l03A
     {
         static void Main(string[] args)
         {
-           ReadInt();
-            
+
 
         }
 
-
-        static int ReadInt() 
-        {
-
-            Console.Write("Ange antal löner ni vill beräkna: ");
-            return int.Parse(Console.ReadLine());
-
-            
-        
-        }
-        
         static void ProcessSalaries(int count)
         {
-            throw new NotImplementedException();
+
+
+        }
+
+        static string ReadInt(string prompt) 
+        {
+        
         }
         
       
