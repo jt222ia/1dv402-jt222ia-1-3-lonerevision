@@ -10,24 +10,22 @@ namespace _1dv402.s1.l03A
     {
         static void Main(string[] args)
         {
+
             int salariesInput = 0;
             salariesInput = ReadInt("Ange hur många löner som ska beräknas: ");
+            if (salariesInput >= 2)
+            {
+                ProcessSalaries(salariesInput);
+            }
 
-            while(salariesInput >= 2)
-                try
-                {
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("FEL! Du måste minst ange 2 löner för att beräkna");
+                Console.ResetColor();
+            }
 
-                    ProcessSalaries(salariesInput);
-                    break;
-                }
-                catch
-                {
-                    Console.WriteLine("Du måste mata in minst 2 löner för att göra en beräkning!");
-                }
-
-                    
-
-                
 
             Console.ReadKey();
 
@@ -35,12 +33,17 @@ namespace _1dv402.s1.l03A
 
         static void ProcessSalaries(int count)
         {
-            int[] salaries = new int[count];
+            int[] totalSalaries = new int[count];
 
-            for (int i = 0; i < salaries.Length; i++)
+            for (int i = 0; i < totalSalaries.Length; i++)
             {
-                salaries[i] = ReadInt(String.Format("Ange lön nr {0}: ", i + 1));
+                totalSalaries[i] = ReadInt(String.Format("Ange lön nr {0}: ", i + 1));
             }
+
+            Console.WriteLine();
+            Console.WriteLine("--------------------------");
+
+            Array.Sort(totalSalaries);
             
         }
 
