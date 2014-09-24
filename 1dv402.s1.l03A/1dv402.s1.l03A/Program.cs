@@ -47,59 +47,60 @@ namespace _1dv402.s1.l03A
             //Sorterar Arrayen
             Array.Sort(totalSalaries);
 
+            //Klonar min array
+            //klonar min array
+            int[] copy = (int[])totalSalaries.Clone();
+
             int numberOfSalaries = 0;
             int median = 0;
             int avergageSalary = 0;
             int salarySpread = 0;
 
             //antal löner i arrayen räknas in i antalLoner
-            numberOfSalaries = totalSalaries.Count();
+            numberOfSalaries = copy.Count();
 
             //kolla med hjälp av modulus om antal löner e ett jämnt eller ojämnt tal
             if (numberOfSalaries % 2 == 0)
             {
-                // Vid jämnt antal
-                median = (totalSalaries[(numberOfSalaries / 2) - 1] + totalSalaries[(numberOfSalaries / 2)]) / 2;
+                // jämnt antal inmatade löner
+                median = (copy[(numberOfSalaries / 2) - 1] + copy[(numberOfSalaries / 2)]) / 2;
                             }
             else
             {
-                // Vid udda antal
-                median = totalSalaries[((numberOfSalaries - 1) / 2)];
+                // udda antal inmatade löner
+                median = copy[((numberOfSalaries - 1) / 2)];
                 
             }
             
             //Räknar ut medellönen
-            avergageSalary = (int)totalSalaries.Average();
+            avergageSalary = (int)copy.Average();
             
             //Räknar ut lönespridningen
-            salarySpread = totalSalaries.Max() - totalSalaries.Min();
+            salarySpread = copy.Max() - copy.Min();
             
-            //Presentera resultatet
+            //Presenterar resultatet
             Console.WriteLine("---------------------------------");
             Console.WriteLine("{0, -15} {1, 10:c0}", "Medianlön:", median);
             Console.WriteLine("{0, -15} {1, 10:c0}", "Medellön:", avergageSalary);
             Console.WriteLine("{0, -15} {1, 10:c0}", "Lönespridning:", salarySpread);
             Console.WriteLine("---------------------------------");
 
-            //klonar min array
-            int[] copy = (int[])totalSalaries.Clone();
-
-            //Sorterar om min array igen
-            Array.Sort(copy);
+                
+            
 
             //Skriva ut de heltal som arrayen håller och presenterar 
-            for (int i = 0; i < copy.Length; ++i)
+            for (int i = 0; i < totalSalaries.Length; ++i)
             {
-                Console.Write("{0, 8}", copy[i]);
-                if((i + 1) % 3 == 0)
+                
+                if(i % 3 == 0)
                 {
                     Console.WriteLine();
                     
                 }
-                
-            }            
+                Console.Write("{0, 8}", totalSalaries[i]);
+            }                        
             //Escape historien som jag inte fått til riktigt än
-            
+
             
         }
 
